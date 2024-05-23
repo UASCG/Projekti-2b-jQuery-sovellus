@@ -16,9 +16,8 @@
             <h1 class="display-1 text-nowrap">Tehtäväluettelo</h1>
             <div class="input-group input-group-lg mb-3 container-fluid text-break">
                 <button type="button" class="btn btn-outline-secondary" id="newTaskInput">Lisää</button>
-                <p class="counter screen-only" aria-hidden="true">100 merkkiä jäljellä.</p>
-                <input type="text" class="counted input-group input-group-lg mb-3" minlength="1" maxlength="100" id="taskInput"
-                    placeholder="Lisää tehtävä..."> <!-- Adds task to list below. -->
+                <input type="text" class="counted input-group input-group-lg mb-3" minlength="1" maxlength="100" id="taskInput" placeholder="Lisää tehtävä..."> <!-- Adds task to list below. -->
+                <p class="counter screen-only" aria-hidden="true" id="countertext">100 merkkiä jäljellä.</p>
                 <button type="button" class="btn btn-outline-secondary" id="clearStorage">Poista kaikki</button>
             </div>
             <!-- Deletes all stored data from localStorage. -->

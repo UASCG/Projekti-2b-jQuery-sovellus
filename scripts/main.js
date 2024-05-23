@@ -40,13 +40,23 @@ $(document).ready(function () { // Begin checking if localStorage contains entri
         console.log("No saved tasks found.");
         $('#loadTaskMessage').text('Tallennettuja tehtäviä ei löytynyt.');
     }
+
+    $('.counted').on("load propertychange keyup input paste", function () { // For character counter. Thank you to Eric Niquette for guide on how to accomplish this. https://www.niquette.ca/articles/input-counter/
+        var limit = $(this).attr("maxlength");
+        var remainingChars = limit - $(this).val().length;
+        if (remainingChars <= 0) {
+            $(this).val($(this).val().substring(0, limit));
+        }
+        $(this).nextAll('.screen-only').first().text(remainingChars <= -1 ? 0 : remainingChars + ' merkkiä jäljellä');
+    });
+    $('.counted').trigger('load');
 })
 
 $('#newTaskInput').click(function () { // Takes user input and creates a task with it.
-    var limit = $('#taskInput').attr("minlength");
+    var minLimit = $('#taskInput').attr("minlength");
     var inputValue = taskInput.value;
-    if (inputValue < limit) {
-        $(this).nextAll('.screen-only').first().text('Syötä vähintään 1 merkki.');
+    if (inputValue < minLimit) {
+        $('#countertext').text('Syötä vähintään 1 merkki.');
     } else {
         newTask(inputValue, false);
     }
@@ -126,15 +136,3 @@ $('#clearStorage').click(function () { // Clears local storage when button is pr
     localStorage.clear();
     $('#loadTaskMessage').text('Tehtäviä: ' + localStorage.length / 2);
 })
-
-$(document).ready(function () { // For character counter. Thank you to Eric Niquette for guide on how to accomplish this. https://www.niquette.ca/articles/input-counter/
-    $('.counted').on("load propertychange keyup input paste", function () {
-        var limit = $(this).attr("maxlength");
-        var remainingChars = limit - $(this).val().length;
-        if (remainingChars <= 0) {
-            $(this).val($(this).val().substring(0, limit));
-        }
-        $(this).nextAll('.screen-only').first().text(remainingChars <= -1 ? 0 : remainingChars + ' merkkiä jäljellä');
-    });
-    $('.counted').trigger('load');
-});
