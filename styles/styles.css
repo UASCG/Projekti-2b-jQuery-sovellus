@@ -1,0 +1,19 @@
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+    background: #c6c6c6;
+    text-decoration: line-through;
+  }
+
+.close {
+  float: right;
+  background: brown;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.id {
+  float: right;
+  background: salmon;
+  padding-left: 1%;
+  padding-right: 1%;
+}
