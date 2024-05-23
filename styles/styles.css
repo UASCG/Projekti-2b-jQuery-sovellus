@@ -1,8 +1,8 @@
 /* When clicked on, add a background color and strike out text */
 ul li.checked {
-    background: #c6c6c6;
-    text-decoration: line-through;
-  }
+  background: #c6c6c6;
+  text-decoration: line-through;
+}
 
 .close {
   float: right;
