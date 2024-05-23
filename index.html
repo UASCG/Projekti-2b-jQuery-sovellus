@@ -13,22 +13,22 @@
 <body>
     <nav class="navbar sticky-top navbar-expand-lg bg-light">
         <div id="headerDiv" class="container-fluid text-break">
-            <h1>Tehtäväluettelo</h1>
-            <div class="input-group mb-3 container-fluid text-break">
+            <h1 class="display-1 text-nowrap">Tehtäväluettelo</h1>
+            <div class="input-group input-group-lg mb-3 container-fluid text-break">
                 <button type="button" class="btn btn-outline-secondary" id="newTaskInput">Lisää</button>
                 <p class="counter screen-only" aria-hidden="true">100 merkkiä jäljellä.</p>
-                <input type="text" class="counted input-group mb-3" minlength="1" maxlength="100" id="taskInput"
+                <input type="text" class="counted input-group input-group-lg mb-3" minlength="1" maxlength="100" id="taskInput"
                     placeholder="Lisää tehtävä..."> <!-- Adds task to list below. -->
                 <button type="button" class="btn btn-outline-secondary" id="clearStorage">Poista kaikki</button>
             </div>
             <!-- Deletes all stored data from localStorage. -->
         </div>
-        <div class="container-fluid list-group">
+        <div class="container-fluid text-break">
             <p id="loadTaskMessage"></p> <!-- Displays loading messages & number of current tasks. -->
             <p id="addTaskMessage"></p> <!-- Displays help & error messages. -->
         </div>
     </nav>
-    <ul id="taskList">
+    <ul id="taskList" class="container-fluid list-group">
     </ul>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
